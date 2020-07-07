@@ -32,13 +32,22 @@ def main():
         manufacturer = form.manufacturer.data
         model = cars.iloc[int(form.model.data)].model
         year = form.year.data
+
+        # кароч тута просто мануально форсимо всі опції, оскільки виробника ми знаємо
+        form.model.choices = [(model['id'], model['name']) for model in retrieve_models(manufacturer)]
+
         return render_template('main.html', form = form, result = 'PRYVIT DIMON')
 
     return render_template('main.html', form = form)
 
 # create json with car models for given manufacturer taken from "cars" file
 @app.route('/models/<manufacturer>')
-def model(manufacturer):
+def fetch_models(manufacturer):
+    car_array = retrieve_models(manufacturer)
+    return jsonify({'models': car_array})
+
+
+def retrieve_models(manufacturer)
     models = cars.loc[cars.manufacturer == manufacturer]
     models = pd.Series(models.iloc[:,1].values, models.iloc[:,1].index,).to_dict() # same as dict(zip(key, value)) but faster
     car_array = []
@@ -48,8 +57,9 @@ def model(manufacturer):
         car_obj['name'] = v
         car_array.append(car_obj)
 
-    return jsonify({'models': car_array})
+    return car_array
+
 
 if __name__ == '__main__':        
     app.run(debug=True)
-    
+ 
