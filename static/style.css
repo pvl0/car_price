@@ -1,0 +1,48 @@
+form {
+  max-width: 35%;
+  display: block;
+  margin: 0 auto;
+}
+
+body {
+  background-color: rgb(121, 128, 128);
+}
+
+.box_name {
+    font-family: "Segoe UI", Roboto, sans-serif;
+    font-weight: 500;
+}
+
+.select2-container {
+  min-width: 100%;
+}
+
+.input {
+  padding: 10px 10px;
+}
+
+.inputbox {
+  color: rgb(5, 5, 5);
+  border-color: rgba(41, 39, 41, 0.116);
+  border-style: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.field {
+  display: block;
+  margin-bottom: 5px;  
+}
+
+.submit {
+  margin-top: 5px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+.result {
+  margin: auto;
+  width: 35%;
+}
