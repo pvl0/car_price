@@ -1,7 +1,7 @@
 miscellaneous/ 
 css/
 geckodriver.log
-.ipynb_checkpoints
-__pycache__
+.ipynb_checkpoints/
+__pycache__/
 car-scraper.ipynb
 car_poland_aug.csv
