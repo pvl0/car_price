@@ -1,10 +1,6 @@
-flask.Flask 
-flask.render_template 
-flask.request
-flask.jsonify
-flask_wtf.FlaskForm
-wtforms.SelectField
-wtforms.validators.InputRequired
+flask
+flask_wtf
+wtforms
 pickle
 pandas
 numpy
