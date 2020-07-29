@@ -1,2 +1,2 @@
-model/car-scraper.ipynb linguist-language=Java 
-#model/* linguist-vendored
+# model/car-scraper.ipynb linguist-language=Python
+model/* linguist-vendored
