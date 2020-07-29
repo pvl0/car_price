@@ -1,5 +1,5 @@
 miscellaneous/ 
-*geckodriver.log
-*ipynb*
+geckodriver.log
+.ipynb_checkpoints/
 __pycache__/
 *csv*
