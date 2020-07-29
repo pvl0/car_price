@@ -1,6 +1,5 @@
 miscellaneous/ 
-geckodriver.log
-*ipynb_checkpoints/
+*geckodriver.log
+*ipynb*
 __pycache__/
-*car-scraper.ipynb
-*car_poland_aug.csv
+*csv*
