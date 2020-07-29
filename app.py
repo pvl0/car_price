@@ -9,10 +9,7 @@ import pickle
 
 # load xgboost regression model
 reg_model = xgb.Booster({'nthread': 8})
-reg_model.load_model('car_price_xgb_mean.json') 
-
-# with open(f'model/car_price_xgb_mean.pkl', 'rb') as f:
-#     reg_model = pickle.load(f) #xgboost regression
+reg_model.load_model('model/car_price_xgb_mean.json')
 
 # load df with cars' parameters
 cars = pd.read_csv('model/cars')
