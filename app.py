@@ -83,7 +83,8 @@ def main():
         columns_xgb = ['manufacturer_mean', 'model_mean', 'year_mean', 'mileage', 'engine_capacity_mean', 'fuel_type_mean',
                         'automatic_mean', 'damaged_mean', 'right_wheel_mean', 'slightly_damaged_mean']
         df_xgb = df_xgb.reindex(columns = columns_xgb)
-
+        df_xgb = xgb.DMatrix(df_xgb)
+        
         # Get the xgb model's prediction
         prediction = np.round(reg_model.predict(df_xgb), -2)
         prediction = f'{prediction[0].astype(int):,} PLN'.replace(',', ' ')
