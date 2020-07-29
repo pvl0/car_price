@@ -2,13 +2,17 @@ from flask import Flask, render_template, request, jsonify
 from flask_wtf import FlaskForm
 from wtforms import SelectField, IntegerField, DecimalField, SubmitField
 from wtforms.validators import InputRequired, NumberRange
-import pickle
 import pandas as pd
 import numpy as np
+import xgboost as xgb
+import pickle
 
-# using pickle to load ML model
-with open(f'model/car_price_xgb_mean.pkl', 'rb') as f:
-    reg_model = pickle.load(f) #xgboost regression
+# load xgboost regression model
+reg_model = xgb.Booster({'nthread': 8})
+reg_model.load_model('car_price_xgb_mean.json') 
+
+# with open(f'model/car_price_xgb_mean.pkl', 'rb') as f:
+#     reg_model = pickle.load(f) #xgboost regression
 
 # load df with cars' parameters
 cars = pd.read_csv('model/cars')
