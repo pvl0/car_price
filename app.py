@@ -8,8 +8,11 @@ import xgboost as xgb
 import pickle
 
 # load xgboost regression model
-reg_model = xgb.Booster({'nthread': 8})
-reg_model.load_model('model/car_price_xgb_mean.json')
+# reg_model = xgb.Booster({'nthread': 8})
+# reg_model.load_model('model/car_price_xgb_mean.json')
+
+with open('model/car_price_xgb_mean.pkl', 'rb') as f:
+    reg_model = pickle.load(f)
 
 # load df with cars' parameters
 cars = pd.read_csv('model/cars')
@@ -84,7 +87,7 @@ def main():
                         'automatic_mean', 'damaged_mean', 'right_wheel_mean', 'slightly_damaged_mean']
         df_xgb = df_xgb.reindex(columns = columns_xgb)
         df_xgb = xgb.DMatrix(df_xgb)
-        
+
         # Get the xgb model's prediction
         prediction = np.round(reg_model.predict(df_xgb), -2)
         prediction = f'{prediction[0].astype(int):,} PLN'.replace(',', ' ')
