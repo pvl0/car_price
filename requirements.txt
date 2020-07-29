@@ -1,0 +1,11 @@
+flask.Flask 
+flask.render_template 
+flask.request
+flask.jsonify
+flask_wtf.FlaskForm
+wtforms.SelectField
+wtforms.validators.InputRequired
+pickle
+pandas
+numpy
+gunicorn
