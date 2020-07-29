@@ -1,2 +1,2 @@
-#*.ipynb linguist-language=Java 
-model/* linguist-vendored
+car-scraper.ipynb linguist-language=Java 
+#model/* linguist-vendored
