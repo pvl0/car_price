@@ -4,4 +4,4 @@ wtforms
 pandas
 numpy
 gunicorn
-xgboost
+xgboost==0.9
